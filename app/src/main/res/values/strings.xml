@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project1Calculator</string>
+    <string name="plus">&#xe606;</string>
+    <string name="minus">&#xe608;</string>
+    <string name="multiple">&#xe607;</string>
+    <string name="devide">&#xe6d7;</string>
+    <string name="delete">&#xe797;</string>
+    <string name="equal">&#xe6db;</string>
+</resources>

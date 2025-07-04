@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="16dp"
+    tools:layout_editor_absoluteY="-72dp">
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingEnd="@dimen/result_padding"
+        android:paddingBottom="15dp"
+        android:paddingTop="10dp"
+        android:text="0"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/result_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_process"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="bottom"
+        android:paddingStart="@dimen/result_padding"
+        android:paddingEnd="@dimen/result_padding"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/process_text_size"
+        app:layout_constraintBottom_toTopOf="@+id/tv_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_clear"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/operation_left_top_selector"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/tv_num7"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_devide"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_devide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/operation_selector"
+            android:gravity="center"
+            android:text="@string/devide"
+            android:tag="÷"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_multiple"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_clear"
+            app:layout_constraintTop_toTopOf="@+id/tv_clear" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_multiple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/operation_selector"
+            android:gravity="center"
+            android:text="@string/multiple"
+            android:tag="×"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toStartOf="@+id/tv_delete"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_devide"
+            app:layout_constraintTop_toTopOf="@+id/tv_devide" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_delete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/operation_right_top_selector"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_multiple"
+            app:layout_constraintTop_toTopOf="@+id/tv_multiple" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_plus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/operation_selector"
+            android:gravity="center"
+            android:text="@string/plus"
+            android:tag="+"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_delete"
+            app:layout_constraintStart_toStartOf="@+id/tv_delete"
+            app:layout_constraintTop_toTopOf="@+id/tv_num9" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/operation_selector"
+            android:gravity="center"
+            android:text="@string/minus"
+            android:tag="-"
+            android:textColor="@color/text_yellow"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_plus"
+            app:layout_constraintStart_toStartOf="@+id/tv_plus"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num9" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_equal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/text_yellow"
+            android:gravity="center"
+            android:text="@string/equal"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_minus"
+            app:layout_constraintStart_toStartOf="@+id/tv_minus"
+            app:layout_constraintTop_toTopOf="@+id/tv_num3" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_multiple"
+            app:layout_constraintStart_toStartOf="@+id/tv_multiple"
+            app:layout_constraintTop_toTopOf="@+id/tv_num8" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_devide"
+            app:layout_constraintStart_toStartOf="@+id/tv_devide"
+            app:layout_constraintTop_toTopOf="@+id/tv_num7" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/tv_num4"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/tv_clear"
+            app:layout_constraintTop_toBottomOf="@+id/tv_clear" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/tv_num1"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num7" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_num8"
+            app:layout_constraintStart_toStartOf="@+id/tv_num8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num7" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_num9"
+            app:layout_constraintStart_toStartOf="@+id/tv_num9"
+            app:layout_constraintTop_toTopOf="@+id/tv_num5" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/tv_num00"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="@+id/tv_num4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num4" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_num5"
+            app:layout_constraintStart_toEndOf="@+id/tv_num4"
+            app:layout_constraintTop_toTopOf="@+id/tv_num1" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/tv_num6"
+            app:layout_constraintStart_toStartOf="@+id/tv_num6"
+            app:layout_constraintTop_toTopOf="@+id/tv_num2" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num00"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="00"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintStart_toStartOf="@+id/tv_num1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num1" />
+
+        <com.example.project1calculator.UnicodeTextView
+            android:id="@+id/tv_num0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/number_selector"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/operation_text_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_num3"
+            app:layout_constraintStart_toStartOf="@+id/tv_num2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_num1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

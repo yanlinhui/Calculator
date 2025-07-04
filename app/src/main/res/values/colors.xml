@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--    添加颜色资源-->
+    <color name="text_gray">#919191</color>
+    <color name="text_white">@color/white</color>
+    <color name="text_yellow">#FFBB00</color>
+    <color name="bg_main">#242530</color>
+    <color name="bg_number_normal">#535564</color>
+    <color name="bg_operation_normal">#686868</color>
+    <color name="bg_equal">#FFBB00</color>
+    <color name="bg_select">#464754</color>
+</resources>
